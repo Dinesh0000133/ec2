@@ -15,7 +15,7 @@ pipeline {
             checkout([$class: 'GitSCM', branches: [[name: '*/test']], userRemoteConfigs: [[url: env.GIT_REPO_URL]]])
          }
         }
-        stage('Modify pem file 1 permission') {
+        stage('Modify pem file permission') {
         steps {
              dir("${env.ANSIBLE_DIR}"){
           sh "sudo chmod 400 mumbai.pem" //update your pem file name
